@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-800 antialiased;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+}
+
+@layer utilities {
+    .glass-panel {
+        @apply bg-white/60 backdrop-blur-xl border border-white/50 shadow-2xl;
+    }
+
+    .glass-card {
+        @apply bg-white/70 backdrop-blur-lg border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl;
+    }
+
+    .glass-sidebar {
+        @apply bg-white/80 backdrop-blur-2xl border-r border-slate-200/50 shadow-lg;
+    }
+
+    .glass-navbar {
+        @apply bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm sticky top-0 z-40;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-indigo-600;
+    }
+
+    .bg-gradient-primary {
+        @apply bg-gradient-to-br from-brand-600 to-indigo-700;
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-r from-brand-600 to-indigo-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-md hover:shadow-lg hover:from-brand-500 hover:to-indigo-500 transform hover:-translate-y-0.5 transition-all duration-200 active:translate-y-0 active:shadow-md;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-slate-700 font-semibold py-2.5 px-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:bg-slate-50 hover:border-slate-300 transform hover:-translate-y-0.5 transition-all duration-200 active:translate-y-0 active:shadow-sm;
+    }
+
+    .input-field {
+        @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 focus:bg-white transition-all shadow-sm placeholder-slate-400;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .animate-slide-in-right {
+        animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+}
